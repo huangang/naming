@@ -60,6 +60,7 @@ public class AllStudentSituation extends Activity {
 		
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.all_student_situation);
+		ExitAPPUtils.getInstance().addActivity(this);
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(AllStudentSituation.this, android.R.layout.simple_list_item_1, data); 
 		ListView listView = (ListView) findViewById(R.id.list_view); 
 		listView.setAdapter(adapter);
@@ -75,4 +76,6 @@ public class AllStudentSituation extends Activity {
 			
 		});
 	}
+	
+	
 }

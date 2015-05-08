@@ -3,5 +3,6 @@
 
     <string name="app_name">点名程序</string>
     <string name="hello_world">Hello world!</string>
+    <string name="exit_hint">请在按一次,退出程序</string>
 
 </resources>

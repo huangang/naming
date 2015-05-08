@@ -32,6 +32,7 @@ public class AllStudent extends Activity {
 		
 	
 		setContentView(R.layout.all_student);
+		ExitAPPUtils.getInstance().addActivity(this);
 		initStudents(); // 初始化学生数据
 		StudentAdapter adapter = new StudentAdapter(AllStudent.this,R.layout.student_item, studentList);
 		

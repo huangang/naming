@@ -15,6 +15,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MenuItem.OnMenuItemClickListener;
@@ -30,6 +31,7 @@ import android.widget.TextView;
 public class MainActivity extends Activity implements OnClickListener {
 	private MyDatabaseHelper dbHelper;
 	private Button create;
+	private long exitTime = 0;
 	
 	ActionBar actionBar;
 	
@@ -63,6 +65,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		ExitAPPUtils.getInstance().addActivity(this);
 		actionBar=getActionBar();
         actionBar.show();
 	
@@ -383,6 +386,27 @@ public class MainActivity extends Activity implements OnClickListener {
 		
 		
 	}
+	
+
+	
+	
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		if(keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN){ 
+			if((System.currentTimeMillis()-exitTime) > 2000){ 
+				Toast.makeText(getApplicationContext(), R.string.exit_hint, Toast.LENGTH_SHORT).show();
+				exitTime = System.currentTimeMillis(); 
+		} else {
+			ExitAPPUtils.getInstance().exit();
+			//finish();
+			//System.exit(0);
+		}
+			return true; 
+		}
+		return super.onKeyDown(keyCode, event);
+	}
+	
+	
 	
 
 	

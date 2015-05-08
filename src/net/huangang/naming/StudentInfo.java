@@ -3,10 +3,8 @@ package net.huangang.naming;
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Intent;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -33,6 +31,7 @@ public class StudentInfo extends Activity {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.student_info);
+		ExitAPPUtils.getInstance().addActivity(this);
 		Intent intent = getIntent();
         name = intent.getStringExtra("student_name");
         number = intent.getStringExtra("student_number");
@@ -100,5 +99,7 @@ public class StudentInfo extends Activity {
 		Intent intent = new Intent(StudentInfo.this, AllStudent.class); 
 	    startActivity(intent);
 	}
+	
+	
 	
 }
