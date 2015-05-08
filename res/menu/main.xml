@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="net.huangang.naming.MainActivity" >
+
+       <item
+        android:id="@+id/Import"
+        android:orderInCategory="1"
+        android:showAsAction="ifRoom|withText"
+        android:title="导入"/>
+ 
+	    <item 
+	        android:id="@+id/Export"
+	        android:orderInCategory="2"
+	        android:showAsAction="ifRoom|withText"
+	        android:title="导出"/>
+	    
+</menu>
