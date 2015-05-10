@@ -351,8 +351,10 @@ public class MainActivity extends Activity implements OnClickListener {
 			
 			@Override
 			public boolean onMenuItemClick(MenuItem item) {
-				
-				Toast.makeText(getApplicationContext(), "导出", Toast.LENGTH_SHORT).show();
+				DatabaseDump dump1 = new DatabaseDump( db, "studentXml");
+				dump1.exportData("student");
+				dump1.exportData("situation");
+				Toast.makeText(getApplicationContext(), "导出", Toast.LENGTH_LONG).show();
 				return true;
 			}
 		});
