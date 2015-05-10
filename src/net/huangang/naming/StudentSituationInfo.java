@@ -60,21 +60,21 @@ public class StudentSituationInfo extends Activity {
        
         
         if(student_situation.equals("出")){
-        	chu.isChecked();
+        	chu.setChecked(true);
         	Log.d("StudentSituationInfo","出");
         	now_situation = (RadioButton)findViewById(R.id.situation_chu);
         }else if(student_situation.equals("缺")){
-        	que.isChecked();
-        	Log.d("StudentSituationInfo","出");
-        	now_situation = (RadioButton)findViewById(R.id.situation_que);
-        }else if(student_situation.equals("缺")){
+        	que.setChecked(true);
         	Log.d("StudentSituationInfo","缺");
-        	jia.isChecked();
+        	now_situation = (RadioButton)findViewById(R.id.situation_que);
+        }else if(student_situation.equals("假")){
+        	Log.d("StudentSituationInfo","假");
+        	jia.setChecked(true);
         	now_situation = (RadioButton)findViewById(R.id.situation_jia);
         }else {
-        	chu.isChecked();
+        	chu.setChecked(true);
         	now_situation = (RadioButton)findViewById(R.id.situation_chu);
-        	Log.d("StudentSituationInfo","NO");
+        	Log.d("StudentSituationInfo","无");
         }
         
         sname.setText(" 姓名:"+student_name);
