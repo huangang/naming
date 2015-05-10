@@ -25,14 +25,16 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int Export=0x7f09001f;
-        public static final int Import=0x7f09001e;
+        public static final int Export=0x7f09002c;
+        public static final int Import=0x7f09002b;
         public static final int all=0x7f09000d;
         public static final int attendance=0x7f090002;
+        public static final int back_all_situation=0x7f090026;
         public static final int back_all_student=0x7f09001b;
         public static final int chu=0x7f090003;
         public static final int create=0x7f090011;
         public static final int create_student=0x7f090015;
+        public static final int delete_situation=0x7f090025;
         public static final int delete_student=0x7f09001a;
         public static final int fileText=0x7f090012;
         public static final int first=0x7f090008;
@@ -46,9 +48,20 @@ public final class R {
         public static final int number=0x7f090000;
         public static final int previous=0x7f090009;
         public static final int que=0x7f090004;
+        public static final int save_situation=0x7f090024;
         public static final int save_student=0x7f090019;
         public static final int showname=0x7f090007;
         public static final int shownumber=0x7f090006;
+        public static final int situation=0x7f090020;
+        public static final int situation_chu=0x7f090021;
+        public static final int situation_created_time=0x7f09002a;
+        public static final int situation_jia=0x7f090023;
+        public static final int situation_que=0x7f090022;
+        public static final int situation_sname=0x7f09001f;
+        public static final int situation_snumber=0x7f09001e;
+        public static final int situation_student_name=0x7f090027;
+        public static final int situation_student_number=0x7f090028;
+        public static final int situation_student_situation=0x7f090029;
         public static final int sname=0x7f090017;
         public static final int snumber=0x7f090016;
         public static final int student_list_view=0x7f090013;
@@ -65,6 +78,8 @@ public final class R {
         public static final int importstudent=0x7f030003;
         public static final int student_info=0x7f030004;
         public static final int student_item=0x7f030005;
+        public static final int student_situation_info=0x7f030006;
+        public static final int student_situation_item=0x7f030007;
     }
     public static final class menu {
         public static final int main=0x7f080000;

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+<TextView 
+android:id="@+id/situation_snumber"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:textSize="22dp"
+android:text="学号"
+android:layout_marginTop="20dp"
+/>  
+ <TextView 
+     android:id="@+id/situation_sname"
+	 android:layout_width="match_parent"
+	 android:layout_height="wrap_content"
+	 android:textSize="22dp"
+	 android:text="姓名"
+ />
+ <RadioGroup
+        android:id="@+id/situation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" 
+        android:gravity="center"
+        >
+
+	    <RadioButton
+	        android:id="@+id/situation_chu"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="出" 
+	        android:button="@null"
+	        android:drawableBottom="@android:drawable/btn_radio"
+	        android:layout_marginRight="40dp"
+	        android:textSize="30dp"
+	        android:gravity="center"/>
+	    
+	    <RadioButton
+	        android:id="@+id/situation_que"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="缺" 
+	        android:button="@null"
+	        android:drawableBottom="@android:drawable/btn_radio"
+	        android:textSize="30dp"
+	        android:gravity="center"
+	        />
+
+	    <RadioButton
+	        android:id="@+id/situation_jia" 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content" 
+	        android:text="假"
+	        android:button="@null"
+	        android:layout_marginLeft="40dp"
+	        android:drawableBottom="@android:drawable/btn_radio"
+	        android:textSize="30dp"
+	        android:gravity="center"
+	        />
+    </RadioGroup>
+ <Button
+     android:id="@+id/save_situation"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="修改"
+    />
+    
+<Button 
+     android:id="@+id/delete_situation"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="删除"
+    />    
+
+<Button 
+    android:id="@+id/back_all_situation"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="返回"
+    />
+    
+
+</LinearLayout>
