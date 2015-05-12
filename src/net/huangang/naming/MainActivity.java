@@ -14,6 +14,8 @@ import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -22,6 +24,7 @@ import android.view.MenuItem.OnMenuItemClickListener;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -42,9 +45,9 @@ public class MainActivity extends Activity implements OnClickListener {
 	private TextView student_name;
 	private TextView student_number;
 	private TextView student_all;
-	private TextView student_now;
-	int nowid;
-	int allid;
+	private EditText student_now;
+	int nowid;// 当前学生
+	int allid;// 所有学生
 	private Button next_student;
 	private Button previous_student;
 	private Button first_student;
@@ -78,7 +81,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		student_name = (TextView)findViewById(R.id.showname);//展示学生姓名
 		student_number = (TextView)findViewById(R.id.shownumber);//展示学生学号
 		student_all = (TextView)findViewById(R.id.all);//展示总学生数
-		student_now = (TextView)findViewById(R.id.now);//展示目前学生顺序
+		student_now = (EditText)findViewById(R.id.now);//展示目前学生顺序
 //		nowid = 1;
 //		student_now.setText(String.valueOf(nowid));
 		next_student = (Button)findViewById(R.id.next);
@@ -143,6 +146,57 @@ public class MainActivity extends Activity implements OnClickListener {
 				Toast.makeText(getApplicationContext(), name+":"+now_situation.getText(), Toast.LENGTH_SHORT).show();
 			}
 		});
+
+		student_now.addTextChangedListener(new TextWatcher() {
+			
+			@Override
+			public void onTextChanged(CharSequence s, int start, int before, int count) {
+				// TODO Auto-generated method stub
+				//Toast.makeText(getApplicationContext(), "onTextChanged", Toast.LENGTH_SHORT).show();	
+				
+				
+				
+			}
+			
+			@Override
+			public void beforeTextChanged(CharSequence s, int start, int count,
+					int after) {
+				// TODO Auto-generated method stub
+				//Toast.makeText(getApplicationContext(), "beforeTextChanged", Toast.LENGTH_SHORT).show();
+				
+			}
+			
+			@Override
+			public void afterTextChanged(Editable s) {
+				// TODO Auto-generated method stub
+				//Toast.makeText(getApplicationContext(), "afterTextChanged", Toast.LENGTH_SHORT).show();
+				
+				int now_num = Integer.parseInt(s.toString());
+				if(now_num > allid){
+					now_num = allid;
+					onClick(last_student);
+				}else if(now_num < 1){
+					now_num = 1;
+					onClick(first_student);
+				}else{
+					int change = now_num - nowid;
+					if(change >= 1){
+						for(int i = 0;i < change; i++){
+							onClick(next_student);
+						}
+					}else if(change <= -1){
+						for(int i =0; i>change ; i--){
+							onClick(previous_student);
+						}
+					}else{
+						
+					}
+					
+				}
+			}
+		});
+		
+		
 		
 	}
 
