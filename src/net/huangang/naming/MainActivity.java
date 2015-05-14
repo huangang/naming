@@ -170,29 +170,36 @@ public class MainActivity extends Activity implements OnClickListener {
 			public void afterTextChanged(Editable s) {
 				// TODO Auto-generated method stub
 				//Toast.makeText(getApplicationContext(), "afterTextChanged", Toast.LENGTH_SHORT).show();
-				
-				int now_num = Integer.parseInt(s.toString());
-				if(now_num > allid){
-					now_num = allid;
-					onClick(last_student);
-				}else if(now_num < 1){
+				String ss = s.toString();
+				int now_num;
+				if(ss.equals("")){
 					now_num = 1;
 					onClick(first_student);
 				}else{
-					int change = now_num - nowid;
-					if(change >= 1){
-						for(int i = 0;i < change; i++){
-							onClick(next_student);
-						}
-					}else if(change <= -1){
-						for(int i =0; i>change ; i--){
-							onClick(previous_student);
-						}
+					now_num = Integer.parseInt(s.toString());
+					if(now_num > allid){
+						now_num = allid;
+						onClick(last_student);
+					}else if(now_num < 1){
+						now_num = 1;
+						onClick(first_student);
 					}else{
+						int change = now_num - nowid;
+						if(change >= 1){
+							for(int i = 0;i < change; i++){
+								onClick(next_student);
+							}
+						}else if(change <= -1){
+							for(int i =0; i>change ; i--){
+								onClick(previous_student);
+							}
+						}else{
+							
+						}
 						
 					}
-					
 				}
+				
 			}
 		});
 		
